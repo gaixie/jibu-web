@@ -1,0 +1,286 @@
+a {
+    color: #4183c4;
+    text-decoration: none;
+}
+a:hover,
+a:active {
+    color: #b39223;
+}
+
+/* #wrapper 是一个包括 menu 和 content 区域的父 `<div>`。
+   ========================================================================== */
+
+#wrapper {
+    position: relative;
+    color: #555;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/**
+ * #wrapper, #menu, .menu-button 有一样的滑动效果。
+ */
+#wrapper,
+#menu,
+.menu-button {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/* #menu
+   ========================================================================== */
+
+/**
+ * #menu 初始位置位于屏幕左侧之外 160px。
+ */
+#menu {
+    margin-left: -160px;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#menu .pure-menu-heading {
+    color: #333; /* 禁掉 heading 的 hover */
+}
+
+.pure-menu-link {
+    color: #b39223;
+}
+
+.pure-menu-selected .pure-menu-link,
+.pure-menu-selected .pure-menu-link:visited {
+    color: #4c3d00;
+}
+
+.pure-menu-link:hover,
+.pure-menu-link:active {
+    color: #4c3d00;
+    background-color: transparent;
+}
+
+.content .pure-menu-link,
+.content .pure-menu-disabled,
+.content .pure-menu-heading {
+    padding: .5em 1.5em .5em 0;
+}
+
+/* .menu-button
+   ========================================================================== */
+
+/**
+ * Hamburger-Cross                      
+ * https://github.com/jorenvanhee/sass-burger 
+ */
+.menu-button {
+    display: inline-block;
+    padding: .5em;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    position: fixed;
+    z-index: 999;
+}
+
+.burger-icon {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.burger-icon, .burger-icon:before, .burger-icon:after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #444444;
+    -webkit-transition-property: background-color, -webkit-transform;
+    -moz-transition-property: background-color, -moz-transform;
+    -o-transition-property: background-color, -o-transform;
+    transition-property: background-color, transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.burger-icon:before, .burger-icon:after {
+    position: absolute;
+    content: "";
+}
+.burger-icon:before {
+    top: -8px;
+}
+.burger-icon:after {
+    top: 8px;
+}
+
+.menu-button.is-active .burger-icon {
+    background-color: transparent;
+}
+.menu-button.is-active .burger-icon:before {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -moz-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-button.is-active .burger-icon:after {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -moz-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    -o-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* main
+   ========================================================================== */
+
+#main {
+    line-height: 1.6em;
+}
+
+#main legend {
+    display: block;
+    width: 100%;
+    padding: 1em 0 0;
+    color: #aaa;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0.5em;
+}
+
+/* header
+   ========================================================================== */
+
+.header {
+    margin: 0 0.5em 0.5em;
+    color: #333;
+    text-align: center;
+    padding: 2.5em 0 0;
+}
+
+/* .content `<div>` 用来包括所要展示的正文内容.
+   ========================================================================== */
+
+.content {
+    margin: 0 0.5em 2em;
+}
+
+.msg-info,
+.msg-warning,
+.msg-success,
+.msg-error {
+    margin-bottom: 10px;
+    padding:10px;
+}
+
+.msg-info {
+    background-color: #f0f9ff;
+    color: #007dbc;
+}
+.msg-success {
+    background-color: #f1f9f7;
+    color: #1d9d74;
+}
+.msg-warning {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+}
+.msg-error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/* footer
+   ========================================================================== */
+
+.footer {
+    color: #aaa;
+    font-size: 87.5%;
+    border-top: 1px solid #eee;
+    margin: 3em 0.5em 1em;
+    text-align: left;
+}
+
+.legal-language {
+    list-style: none;
+    padding-left: 0;
+}
+
+.legal-language li {
+    float: left;
+    padding-right: 10px;
+}
+
+/* 响应式样式 (Media Queries)
+   ========================================================================== */
+
+/**
+ *  最小宽度如果是 `48em` (768px), 遵循下面的设置。
+ */
+@media (min-width: 48em) {
+
+    /**
+     * 宽屏下通过 padding-left 方式留出左侧菜单位置
+     * 宽屏下不能整体右移，必须在菜单右侧空间内完整显示剩余内容
+     * 确保 "position: relative" 已经被设置。
+     */
+    #wrapper {
+        padding-left: 160px;
+    }
+
+    #menu {
+        left: 160px; /* "#menu" 默认在宽屏下始终显示 */
+    }
+
+    .menu-button {
+        display: none; /* ".menu-button" 默认在宽屏下不显示 */
+    }
+
+    .legal-language {
+        text-align: left;
+    }
+
+    .legal-copyright {
+        text-align: right;
+    }
+}
+
+/**
+ * 最大宽度如果是 `48em` (768px), 遵循下面的设置。
+ * 可以通过下面步骤测试一下显示效果：
+ * * 让浏览器窗口变小（宽度小于 768px）。
+ * * 点击菜单的 trigger 按钮。
+ * * 让浏览器窗口恢复变大，看效果。
+ */
+@media (max-width: 48em) {
+    /**
+     * wrapper 在 .toggled 时，窄频下整体右移 200px，
+     * 这里不会自动折行显示，直接移出屏幕之外，通过鼠标左右滚动来看内容，
+     * 当然这种状态下主要目的是显示菜单。
+     * 确保 position: relative 已经被设置。
+     */
+    #wrapper.toggled {
+        left: 160px;
+    }
+
+    /**
+     * wrapper 在 .toggled 时 #menu 设置距离左边 200px
+     * 才能刚好显示出来（默认距离左边 -200px，在屏幕之外）
+     */
+    #wrapper.toggled #menu {
+        left: 160px;
+    }
+
+    /**
+     * wrapper 在 .toggled 时 .menu-link 设置距离左边 200px，在菜单右侧
+     * toggled 之前刚好在屏幕的左上角
+     */
+    #wrapper.toggled .menu-button {
+        left: 160px;
+    }
+}

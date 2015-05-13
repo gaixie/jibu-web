@@ -1,0 +1,12 @@
+*~
+*.bak
+*.log
+*.orig
+*.out
+
+\#*#
+
+.DS_Store
+
+target/
+
