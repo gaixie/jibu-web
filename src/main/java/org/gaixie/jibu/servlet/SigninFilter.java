@@ -101,14 +101,18 @@ public class SigninFilter implements Filter {
 
         // 如果登录验证未通过，将所有请求（除了登录操作之外）重定向到登录页面。
         if (!allowedRequest) {
-            if (!value.matches("/|/signin|/session|/forgot.*"))
+            if (!value.matches("/|/signin|/session|/forgot.*")) {
                 ((HttpServletResponse) res).sendRedirect("/signin?return_to="+URLEncoder.encode(value,"UTF-8"));
+                return;
+            }
         }
 
         // 如果登录验证已通过，直接将对登录页面重定向到首页。
         if (allowedRequest) {
-            if (value.matches("/signin|/session"))
+            if (value.matches("/signin|/session")) {
                 ((HttpServletResponse) res).sendRedirect("/");
+                return;
+            }
         }
 
         chain.doFilter(req, res);
