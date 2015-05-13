@@ -214,7 +214,7 @@ public class SigninServlet extends HttpServlet {
             sb.append("<form class=\"pure-form pure-form-stacked\" action=\"/forgot\" method=\"post\">\n");
             sb.append("<fieldset>\n");
             sb.append("<label for=\"email\">"+rb.get("signin.forgot.email")+"</label>\n");
-            sb.append("<input id=\"email\" name=\"email\" type=\"text\">\n");
+            sb.append("<input id=\"email\" name=\"email\" type=\"email\">\n");
             sb.append("<button type=\"submit\" class=\"pure-button\">"+rb.get("button.submit")+"</button>\n");
             sb.append("</fieldset>\n");
             sb.append("</form>\n");
@@ -275,9 +275,9 @@ public class SigninServlet extends HttpServlet {
             sb.append("<form class=\"pure-form pure-form-stacked\" action=\"/forgotreset\" method=\"post\">\n");
             sb.append("<fieldset>\n");
             sb.append("<label for=\"password\">"+rb.get("signin.forgotreset.password")+"</label>\n");
-            sb.append("<input id=\"password\" name=\"password\" type=\"text\">\n");
+            sb.append("<input id=\"password\" name=\"password\" type=\"password\">\n");
             sb.append("<label for=\"repassword\">"+rb.get("signin.forgotreset.repassword")+"</label>\n");
-            sb.append("<input id=\"repassword\" name=\"repassword\" type=\"text\">\n");
+            sb.append("<input id=\"repassword\" name=\"repassword\" type=\"password\">\n");
             sb.append("<input name=\"key\" type=\"hidden\" value=\""+req.getParameter("key")+"\">\n");
             sb.append("<button type=\"submit\" class=\"pure-button\">"+rb.get("button.submit")+"</button>\n");
             sb.append("</fieldset>\n");
