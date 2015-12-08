@@ -153,6 +153,14 @@ a:active {
     margin-bottom: 0.5em;
 }
 
+/* search
+   ========================================================================== */
+
+.search {
+    margin: 0 0.5em 0.5em;
+    float: right;
+}
+
 /* header
    ========================================================================== */
 
@@ -160,7 +168,7 @@ a:active {
     margin: 0 0.5em 0.5em;
     color: #333;
     text-align: center;
-    padding: 2.5em 0 0;
+    padding: 0.5em 0 0;
 }
 
 /* .content `<div>` 用来包括所要展示的正文内容.

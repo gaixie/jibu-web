@@ -113,6 +113,12 @@ public class ServletUtils {
         sb.append("<div id=\"main\">\n");
         sb.append("<a href=\"javascript:;\" class=\"menu-button\"><span class=\"burger-icon\"></span></a>\n");
         sb.append("\n");
+        sb.append("<div class=\"search\">\n");
+        sb.append("<form class=\"pure-form\" action=\"/search\" method=\"post\">\n");
+        sb.append("<input type=\"text\" name=\"q\" placeholder=\""+rb.get("search.placeholder")+"\">\n");
+        sb.append("</form>\n");
+        sb.append("</div> <!-- /.search -->\n");
+        sb.append("\n");
         sb.append("<div class=\"header\">\n");
         sb.append("<legend>"+title+"</legend>\n");
         sb.append("</div> <!-- /.header -->\n");
