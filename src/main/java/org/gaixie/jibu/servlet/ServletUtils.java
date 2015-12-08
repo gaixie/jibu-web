@@ -149,7 +149,7 @@ public class ServletUtils {
         sb.append("</div>\n");
         sb.append("<div class=\"pure-u-1 pure-u-md-1-2\">\n");
         sb.append("<p class=\"legal-copyright\">\n");
-        sb.append("© 2014 NodTo Inc. All rights reserved.\n");
+        sb.append("© 2014-2016 NodTo Inc. All rights reserved.\n");
         sb.append("</p>\n");
         sb.append("</div>\n");
         sb.append("</div> <!-- /.pure-g -->\n");
@@ -157,7 +157,7 @@ public class ServletUtils {
         sb.append("</div> <!-- /#main -->\n");
         sb.append("</div> <!-- /#wrapper -->\n");
         sb.append("\n");
-        sb.append("<script src=\"http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js\"></script>\n");
+        sb.append("<script src=\"http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js\"></script>\n");
         sb.append("<script src=\"/js/er.js\"></script>\n");
         sb.append("</body>\n");
         sb.append("</html>\n");
